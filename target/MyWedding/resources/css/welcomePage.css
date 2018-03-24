@@ -1,0 +1,90 @@
+#header {
+	background-color:lavender;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#hotelDetailArea {
+	background-color:grey;
+	border-style: solid;
+    border-color: #FFFFFF;
+}
+.contentBody{
+	background-color: #efefef;
+}
+.roomsinfo {
+	border-style: solid;
+    border-color: #9f9f9f;
+    text-align: center;
+	vertical-align: middle;
+	max-height: 210px;
+}
+
+.roomsinfotag {
+	background-color: #c0c0c0;
+	margin-bottom: 5px;
+}
+
+.available{
+	background-color: #3de445;
+	height: 40px;
+	margin-right: 5px;
+    margin-left: 5px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.occupied{
+	background-color: #ff0000;
+	height: 40px;
+	margin-right: 5px;
+    margin-left: 5px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.maintenance{
+	background-color: #ffff00;
+	height: 40px;
+	margin-right: 5px;
+    margin-left: 5px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.housekeeping{
+	background-color: #3ae9e0;
+	height: 40px;
+	margin-right: 5px;
+    margin-left: 5px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.maingrid{
+	border-style: solid;
+    border-color: #c0c0c0;
+    text-align: center;
+	vertical-align: middle;
+}
+.mainactivity{
+	font-weight: bold;
+}
+.filterArea,
+.mainactivity{
+	text-align:left;
+	vertical-align: middle;
+}
+.filterArea{
+	background-color: #c0c0c0;
+	color: #8080ff;
+}
+#tableHeader{
+	background-color: #ff0000;
+	height: 30px;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+}
+#tableFooter{
+	background-color: #ff0000;
+	height: 30px;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
