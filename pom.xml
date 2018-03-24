@@ -206,6 +206,6 @@
 	</dependency>
   </dependencies>
   <build>
-    <finalName>MyWedding</finalName>
+    <finalName>HotelManagementSystem</finalName>
   </build>
 </project>
