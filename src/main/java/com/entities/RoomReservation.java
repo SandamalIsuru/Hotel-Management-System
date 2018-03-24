@@ -11,14 +11,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 
 @Entity
 @Table(name="booking_detail")
 public class RoomReservation {
 
+	@TableGenerator(name = "booking_detail_id_gen", table = "id_generator", pkColumnName = "gen_name", valueColumnName = "gen_val", allocationSize = 1)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "booking_detail_id_gen")
 	@Column(name="booking_id")
 	private int bookingID;
 	

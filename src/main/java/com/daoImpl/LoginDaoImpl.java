@@ -27,4 +27,9 @@ public class LoginDaoImpl implements LoginDao {
 		return loginList;
 	}
 
+	public boolean addLogin(Login login) {
+		sessionFactory.getCurrentSession().saveOrUpdate(login);
+		return true;
+	}
+
 }

@@ -1,18 +1,22 @@
 package com.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 @Entity
 @Table(name="guest_detail")
 public class Guest {
 	
+	@TableGenerator(name = "guest_id_gen", table = "id_generator", pkColumnName = "gen_name", valueColumnName = "gen_val", allocationSize = 1)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "guest_id_gen")
 	@Column(name="guest_id")
 	private int guestID;
 	
@@ -44,7 +48,7 @@ public class Guest {
 	private String gender;
 	
 	@Column(name="dob")
-	private String dob;
+	private Date dob;
 	
 	@Column(name="mobile")
 	private String mobileNo;
@@ -135,11 +139,11 @@ public class Guest {
 		this.gender = gender;
 	}
 
-	public String getDob() {
+	public Date getDob() {
 		return dob;
 	}
 
-	public void setDob(String dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
 

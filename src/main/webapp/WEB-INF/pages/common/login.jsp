@@ -41,22 +41,22 @@
 </body>
 <script type="text/javascript">
 
-// function login(user_name, password) {
-//     $.ajax(
-//             {
-//             	url: "getLogin",
-//                 type: "POST",
-//                 data: {username: user_name, password: password},
-//                 success: function (response) {
-//                 	alert("Successfully Logged");
-//                 },
-//                 error: function (x, e) {
-//                     alert('There seems to be some problem while fetching records!');
-//                 }
+ function login(user_name, password) {
+     $.ajax(
+             {
+             	url: "getLogin",
+                 type: "POST",
+                 data: {username: user_name, password: password},
+                 success: function (response) {
+                 	alert("Successfully Logged");
+                 },
+                 error: function (x, e) {
+                     alert('There seems to be some problem while fetching records!');
+                 }
 
-//             }
-//         );
-//     }
+             }
+         );
+     }
 </script>
 
 </html>
