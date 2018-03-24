@@ -5,3 +5,7 @@
 .gradle/
 .project
 .settings/
+*.cfg
+sftpOutputDir/
+test/
+/target/
