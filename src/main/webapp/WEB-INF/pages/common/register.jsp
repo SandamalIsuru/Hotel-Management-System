@@ -11,6 +11,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel='stylesheet' href='../resources/css/loginStyle.css'>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
 <title>Insert title here</title>
 
 </head>
@@ -28,8 +30,8 @@
 				<form:input path="guest.city" type="text" value="${userRegister.guest.city}" id="inputCity" class="form-control" placeholder="City" />
 				<form:input path="guest.state" type="text" value="${userRegister.guest.state}" id="inputState" class="form-control" placeholder="State" />
 				<form:input path="guest.country" type="text" value="${userRegister.guest.country}" id="inputCountry" class="form-control" placeholder="Country"/>
-				<label class="radio-inline"><input type="radio" name="optradio"> Male</label>
-				<label class="radio-inline"><input type="radio" name="optradio"> Female</label>
+				<form:radiobutton path="guest.gender" value="M"/> Male 
+                <form:radiobutton path="guest.gender" value="F"/> Female 
 				<form:input path="guest.dob" type="text" value="${userRegister.guest.dob}" id="inputDOB" class="form-control" placeholder="DOB" />
 				<form:input path="guest.mobileNo" type="text" value="${userRegister.guest.mobileNo}" id="inputMobile" class="form-control" placeholder="Mobile Number" />
 				
@@ -44,26 +46,18 @@
 	
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#inputDOB").datepicker();
+  });
+  </script>
 <script type="text/javascript">
+
 /* function registerCustomer(){
 	window.location = "../login/login.htm";
 	 } */
- /* function registerCustomer(first_name, middle_name, last_name, addressLine1, addressLine2, city, state, country, gender, dob, mobile) {
-     $.ajax(
-             {
-             	url: "getLogin",
-                 type: "POST",
-                 data: {guest.firstName: first_name, guest.firstName: middle_name, guest.firstName: last_name, guest.firstName: addressLine1, guest.firstName: addressLine2, guest.firstName: city, guest.firstName: state, guest.firstName: country, guest.firstName: gender, guest.firstName: dob, guest.firstName: mobile},
-                 success: function (response) {
-                 	alert("Successfully Logged");
-                 },
-                 error: function (x, e) {
-                     alert('There seems to be some problem while fetching records!');
-                 }
-
-             }
-         );
-     } */
 </script>
 
 </html>
