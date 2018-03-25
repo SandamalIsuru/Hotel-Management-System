@@ -1,5 +1,7 @@
 package com.servicesImpl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +24,7 @@ public class CommonServiceImpl implements CommonService {
 	@Autowired
 	LoginDao loginDao;
 	public boolean addCustomer(UserRegister newCustomer){
+		newCustomer.getGuest().setRegisterDate(new Date());
 		boolean isGuestInserted = guestDao.addGuest(newCustomer.getGuest());
 		Login login = new Login();
 		login.setUsername(newCustomer.getGuest().getFirstName());

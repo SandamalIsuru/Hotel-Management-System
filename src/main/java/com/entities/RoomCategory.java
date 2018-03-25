@@ -25,7 +25,7 @@ public class RoomCategory {
 	private String bedType;
 	
 	@Column(name="no_of_bed")
-	private int nomberOfBed;
+	private String numberOfBed;
 
 	@Column(name="description")
 	private String bedCategoryDescription;
@@ -54,12 +54,12 @@ public class RoomCategory {
 		this.bedType = bedType;
 	}
 
-	public int getNomberOfBed() {
-		return nomberOfBed;
+	public String getNumberOfBed() {
+		return numberOfBed;
 	}
 
-	public void setNomberOfBed(int nomberOfBed) {
-		this.nomberOfBed = nomberOfBed;
+	public void setNumberOfBed(String numberOfBed) {
+		this.numberOfBed = numberOfBed;
 	}
 
 	public String getBedCategoryDescription() {
@@ -69,6 +69,4 @@ public class RoomCategory {
 	public void setBedCategoryDescription(String bedCategoryDescription) {
 		this.bedCategoryDescription = bedCategoryDescription;
 	}
-	
-	
 }

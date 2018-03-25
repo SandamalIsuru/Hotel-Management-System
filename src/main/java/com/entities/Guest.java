@@ -54,7 +54,7 @@ public class Guest {
 	private String mobileNo;
 	
 	@Column(name="reg_date")
-	private String registerDate;
+	private Date registerDate;
 	
 	@Column(name="pin")
 	private String pin;
@@ -155,11 +155,11 @@ public class Guest {
 		this.mobileNo = mobileNo;
 	}
 
-	public String getRegisterDate() {
+	public Date getRegisterDate() {
 		return registerDate;
 	}
 
-	public void setRegisterDate(String registerDate) {
+	public void setRegisterDate(Date registerDate) {
 		this.registerDate = registerDate;
 	}
 

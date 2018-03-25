@@ -14,33 +14,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.entities.UserRegister;
-import com.services.CommonService;
+import com.entities.RoomCategory;
+import com.services.RoomCategoryService;
 
 @Controller
-@RequestMapping(value="register")
-public class UserRegisterController {
-	
+@RequestMapping(value="rooms")
+public class RoomCategoryController {
+
 	@Autowired
-	CommonService commonService;
+	RoomCategoryService roomCategoryService;
 	
-	@RequestMapping(value="/register.htm", method = RequestMethod.GET)
+	@RequestMapping(value="/roomCategory.htm", method = RequestMethod.GET)
 	public ModelAndView getPage(){
-		ModelAndView model = new ModelAndView("common/register");
-		UserRegister userRegister = new UserRegister();
-		model.addObject("customerRegisterForm", userRegister);
+		ModelAndView model = new ModelAndView("common/roomCategory");
+		RoomCategory roomCategory = new RoomCategory();
+		model.addObject("roomCategoryForm", roomCategory);
 		model.addObject("msg", "Hello Isuru Sandamal");
 		return model;
 	}
 	
-	@RequestMapping(value="/registerCustomer", method = RequestMethod.POST)
-	public ModelAndView saveOrUpdateUser(@ModelAttribute("customerRegisterForm") @Validated UserRegister userRegister,
+	@RequestMapping(value="/addRoomCategory", method = RequestMethod.POST)
+	public ModelAndView saveOrUpdateUser(@ModelAttribute("roomCategoryForm") @Validated RoomCategory roomCategory,
 			BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes) {
 		
-		ModelAndView modelAndView = new ModelAndView("redirect:register.htm");
+		ModelAndView modelAndView = new ModelAndView("redirect:roomCategory.htm");
 		Map<String,Object> map = new HashMap<String,Object>();
-		boolean loginStatus = commonService.addCustomer(userRegister);
+		boolean loginStatus = roomCategoryService.addRoomCategory(roomCategory);
 		return modelAndView;
 	}
 }
