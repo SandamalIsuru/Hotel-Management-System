@@ -14,33 +14,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.entities.RoomCategory;
-import com.services.RoomCategoryService;
+import com.entities.RoomType;
+import com.services.RoomTypeService;
 
 @Controller
 @RequestMapping(value="rooms")
-public class RoomCategoryController {
+public class roomTypeController {
 
 	@Autowired
-	RoomCategoryService roomCategoryService;
+	RoomTypeService roomTypeService;
 	
-	@RequestMapping(value="/roomCategory.htm", method = RequestMethod.GET)
+	@RequestMapping(value="/roomType.htm", method = RequestMethod.GET)
 	public ModelAndView getPage(){
-		ModelAndView model = new ModelAndView("common/roomCategory");
-		RoomCategory roomCategory = new RoomCategory();
-		model.addObject("roomCategoryForm", roomCategory);
+		ModelAndView model = new ModelAndView("common/roomType");
+		RoomType roomType = new RoomType();
+		model.addObject("roomTypeForm", roomType);
 		model.addObject("msg", "Hello Isuru Sandamal");
 		return model;
 	}
 	
-	@RequestMapping(value="/addRoomCategory", method = RequestMethod.POST)
-	public ModelAndView saveOrUpdateRoomCategory(@ModelAttribute("roomCategoryForm") @Validated RoomCategory roomCategory,
+	@RequestMapping(value="/addRoomType", method = RequestMethod.POST)
+	public ModelAndView saveOrUpdateRoomType(@ModelAttribute("roomTypeForm") @Validated RoomType roomType,
 			BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes) {
 		
-		ModelAndView modelAndView = new ModelAndView("redirect:roomCategory.htm");
+		ModelAndView modelAndView = new ModelAndView("redirect:roomType.htm");
 		Map<String,Object> map = new HashMap<String,Object>();
-		boolean isRoomCategoryAdded = roomCategoryService.addRoomCategory(roomCategory);
+		boolean isRoomAdded = roomTypeService.addRoomType(roomType);
 		return modelAndView;
 	}
 }

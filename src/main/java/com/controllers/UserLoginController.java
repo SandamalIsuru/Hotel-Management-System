@@ -34,7 +34,7 @@ public class UserLoginController {
 	}
 	
 	@RequestMapping(value="/getLogin", method = RequestMethod.POST)
-	public ModelAndView saveOrUpdateUser(@ModelAttribute("userForm") @Validated Login login,
+	public ModelAndView saveOrUpdateLogin(@ModelAttribute("userForm") @Validated Login login,
 			BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes) {
 		
