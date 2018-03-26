@@ -17,7 +17,6 @@ public class ReservationDetailServiceImpl implements ReservationDetailService{
 	@Autowired
 	ReservationDetailDao reservationDetailDao;
 	public List<RoomReservation> getAllRoomReservation(String checkin) {
-		// TODO Auto-generated method stub
 		return reservationDetailDao.getAllRoomReservation(checkin);
 	}
 
