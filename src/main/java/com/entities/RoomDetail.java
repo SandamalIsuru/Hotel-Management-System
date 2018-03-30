@@ -35,14 +35,14 @@ public class RoomDetail {
 	@Column(name="is_available")
 	private boolean isAvailable;
 	
-	@Column(name="is_reparing")
-	private boolean isReparing;
+	@Column(name="is_repairing")
+	private boolean isRepairing;
 	
 	@Column(name="is_housekeeping")
 	private boolean isHousekeeping;
 	
 	@Column(name="per_day_charge")
-	private float per_day_charge;
+	private float perDayCharge;
 
 	public int getRoomNo() {
 		return roomNo;
@@ -52,20 +52,20 @@ public class RoomDetail {
 		this.roomNo = roomNo;
 	}
 
-	public RoomType getRoomTypeID() {
+	public RoomType getRoomType() {
 		return roomType;
 	}
 
-	public void setRoomTypeID(RoomType roomTypeID) {
-		this.roomType = roomTypeID;
+	public void setRoomType(RoomType roomType) {
+		this.roomType = roomType;
 	}
 
-	public RoomCategory getRoomCategoryID() {
+	public RoomCategory getRoomCategory() {
 		return roomCategory;
 	}
 
-	public void setRoomCategoryID(RoomCategory roomCategoryID) {
-		this.roomCategory = roomCategoryID;
+	public void setRoomCategory(RoomCategory roomCategory) {
+		this.roomCategory = roomCategory;
 	}
 
 	public String getRoomFloor() {
@@ -84,12 +84,12 @@ public class RoomDetail {
 		this.isAvailable = isAvailable;
 	}
 
-	public boolean isReparing() {
-		return isReparing;
+	public boolean isRepairing() {
+		return isRepairing;
 	}
 
-	public void setReparing(boolean isReparing) {
-		this.isReparing = isReparing;
+	public void setRepairing(boolean isRepairing) {
+		this.isRepairing = isRepairing;
 	}
 
 	public boolean isHousekeeping() {
@@ -100,12 +100,12 @@ public class RoomDetail {
 		this.isHousekeeping = isHousekeeping;
 	}
 
-	public float getPer_day_charge() {
-		return per_day_charge;
+	public float getPerDayCharge() {
+		return perDayCharge;
 	}
 
-	public void setPer_day_charge(float per_day_charge) {
-		this.per_day_charge = per_day_charge;
+	public void setPerDayCharge(float perDayCharge) {
+		this.perDayCharge = perDayCharge;
 	}
 
 }

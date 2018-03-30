@@ -19,7 +19,7 @@ import com.services.RoomTypeService;
 
 @Controller
 @RequestMapping(value="rooms")
-public class roomTypeController {
+public class RoomTypeController {
 
 	@Autowired
 	RoomTypeService roomTypeService;

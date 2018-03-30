@@ -9,4 +9,6 @@ public interface RoomDetailDao {
 	public List<RoomDetail> getAllRooms();
 	
 	public Long getAvailableRooms();
+	
+	public boolean addRoomDetail(RoomDetail roomDetail);
 }
