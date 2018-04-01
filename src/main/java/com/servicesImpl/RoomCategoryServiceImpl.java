@@ -1,5 +1,7 @@
 package com.servicesImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +18,9 @@ public class RoomCategoryServiceImpl implements RoomCategoryService {
 	RoomCategoryDao roomCategoryDao;
 	public boolean addRoomCategory(RoomCategory roomCategory) {
 		return roomCategoryDao.addRoomCategory(roomCategory);
+	}
+	public List<RoomCategory> getAllRoomCategories() {
+		return roomCategoryDao.getAllRoomCategories();
 	}
 
 }

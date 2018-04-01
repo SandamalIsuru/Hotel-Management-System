@@ -33,7 +33,11 @@ public class RoomDetailDaoImpl implements RoomDetailDao {
 	}
 	
 	public boolean addRoomDetail(RoomDetail roomDetail) {
-		sessionFactory.getCurrentSession().saveOrUpdate(roomDetail);
+//		String queryString = "insert into room_detail(room_floor) values(?)"+" (:?)";
+//		Query query = sessionFactory.getCurrentSession().createQuery(queryString);
+//		query.setParameter(1, roomDetail.getRoomFloor());
+//		query.executeUpdate();
+		sessionFactory.getCurrentSession().save(roomDetail);
 		return true;
 	}
 

@@ -3,13 +3,18 @@ package com.entities;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name="room_detail")
@@ -22,11 +27,11 @@ public class RoomDetail {
 	private int roomNo;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="room_type_id")
+	@JoinColumn(name="room_type_id", referencedColumnName= "room_type_id")
 	private RoomType roomType;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="room_category_id")
+	@JoinColumn(name="room_category_id", referencedColumnName= "room_category_id")
 	private RoomCategory roomCategory;
 	
 	@Column(name="room_floor")

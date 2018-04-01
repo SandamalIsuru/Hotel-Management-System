@@ -127,7 +127,6 @@
 	        </div>
 	    </div>
 	</div>
-<script src="../resources/angularjs/controllers/common/welcomeController.js"></script>
 <script>
 var app = angular.module('myApp', []);
 app.controller('welcomeController', function($scope, $filter) {
