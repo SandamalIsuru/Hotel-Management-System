@@ -53,16 +53,24 @@
 			        <div class="col-md-2">
 			        	<h5>Room Type: </h5>
 			        </div>
-			        <div class="col-md-4">
-			        	<div class="dropdown">
-						  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Room Type
-						  <span class="caret"></span></button>
-						  <ul class="dropdown-menu">
-						    <li><a href="#">HTML</a></li>
-						    <li><a href="#">CSS</a></li>
-						    <li><a href="#">JavaScript</a></li>
-						  </ul>
+			        <div class="col-md-6">
+			        	<div class="btn-group">
+			        		<spring:url value="/welcome/filterByRoomType" var="filterByRoomTypeActionUrl" />
+			    			<form:form class="form-signin" method="post" modelAttribute="filterByRoomTypeForm" action="${filterByRoomTypeActionUrl}">
+	            
+				        	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						        Filter By<span class="caret"></span>
+						      </button>
+							  <button id="roomTypeButton" class="btn btn-primary dropdown-toggle" type="submit">Room Type</button>
+							  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+							    <li ng-repeat="roomType in allRoomTypes" value="{{roomType}}"><a href="#">{{roomType.roomDescription}}</a></li>
+							  </ul>
+							</form:form>
 						</div>
+						<!-- <select path = "roomType" class="selectpicker" data-live-search="true" onchange="changeHiddenRoomTypeDropDownValue(this)" >
+		                    <option value = "-1">Select Room Type</option>
+		                    <option value = "{{roomType.roomTypeID}}" ng-repeat="roomType in allRoomTypes">{{roomType.roomDescription}}</option>
+		                </select> -->
 			        </div>
 		        </div>
 				<div class="row">
@@ -116,8 +124,8 @@
 								 <td>{{room.roomCategory.categoryName}}</td>
 							  </tr>
 							  <tr>
-								 <td>{{room.roomType.roomDescription}}</td>
-								 <td>{{room.roomCategory.categoryName}}</td>
+								 <td>{{getAllGuests(room.roomNo).guest.firstName}} {{getAllGuests(room.roomNo).guest.lastName}}</td>
+								 <td>{{getAllGuests(room.roomNo).checkin}}</td>
 							  </tr>
 						  </tbody>
 					    </table>
@@ -136,6 +144,18 @@ app.controller('welcomeController', function($scope, $filter) {
     $scope.housekeepingRooms = ${housekeepingRooms};
     $scope.allReservations = ${allReservations};
     $scope.allRooms = ${allRooms};
+    $scope.allReservationsDetails = ${allReservationsDetails};
+    $scope.allRoomTypes = ${allRoomTypes};
+    $scope.getAllGuests = function(roomId) { 
+    	$scope.reservationDetails = "";
+		angular.forEach($scope.allReservationsDetails, function(reservation){ 
+		if(reservation.room.roomNo == roomId){
+		    $scope.reservationDetails = reservation; 
+		} 
+		});
+    	return $scope.reservationDetails;
+    };
+    
     $scope.setColorAvailableRoom = function() {
         return {
         'background-color': '#3de445',
@@ -164,6 +184,15 @@ app.controller('welcomeController', function($scope, $filter) {
     	'border-top-left-radius': '25px',
     	'border-top-right-radius': '25px'}
     };
+});
+$(function(){
+
+    $(".dropdown-menu li a").click(function(){
+
+    	$("#roomTypeButton").text($(this).text());
+
+   });
+
 });
 </script>
 <%-- <jsp:include page="../footer.jsp"></jsp:include> --%>

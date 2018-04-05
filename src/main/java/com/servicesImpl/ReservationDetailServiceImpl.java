@@ -19,5 +19,8 @@ public class ReservationDetailServiceImpl implements ReservationDetailService{
 	public List<RoomReservation> getAllRoomReservation(String checkin) {
 		return reservationDetailDao.getAllRoomReservation(checkin);
 	}
+	public List<RoomReservation> getAllRoomBookingDetails() {
+		return reservationDetailDao.getAllRoomBookingDetails();
+	}
 
 }

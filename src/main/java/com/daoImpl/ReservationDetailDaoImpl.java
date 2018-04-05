@@ -25,4 +25,9 @@ public class ReservationDetailDaoImpl implements ReservationDetailDao {
 		return query.list();
 	}
 
+	public List<RoomReservation> getAllRoomBookingDetails() {
+		String queryString = "from RoomReservation";
+		Query query = sessionFactory.getCurrentSession().createQuery(queryString);
+		return query.list();
+	}
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.dao.RoomDetailDao;
 import com.entities.RoomCategory;
 import com.entities.RoomDetail;
+import com.entities.RoomReservation;
 import com.entities.RoomType;
 
 @Repository
@@ -39,6 +40,13 @@ public class RoomDetailDaoImpl implements RoomDetailDao {
 //		query.executeUpdate();
 		sessionFactory.getCurrentSession().save(roomDetail);
 		return true;
+	}
+
+	public List<RoomDetail> getRoomDetailsByRoomType(int roomTypeId) {
+		String queryString = "from RoomDetail where roomType.roomTypeID=:roomTypeId";
+		Query query = sessionFactory.getCurrentSession().createQuery(queryString);
+		query.setParameter("roomTypeId", roomTypeId);
+		return query.list();
 	}
 
 }

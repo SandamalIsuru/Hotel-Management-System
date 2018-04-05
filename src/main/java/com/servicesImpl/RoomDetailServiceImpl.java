@@ -1,5 +1,7 @@
 package com.servicesImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +18,9 @@ public class RoomDetailServiceImpl implements RoomDetailService {
 	RoomDetailDao roomDetailDao;
 	public boolean addRoomDetail(RoomDetail roomDetail) {
 		return roomDetailDao.addRoomDetail(roomDetail);
+	}
+	public List<RoomDetail> getRoomDetailsByRoomType(int roomTypeId) {
+		return roomDetailDao.getRoomDetailsByRoomType(roomTypeId);
 	}
 
 }
